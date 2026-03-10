@@ -1,0 +1,15 @@
+name: Handle Source Notification
+
+on:
+  repository_dispatch:
+    types: [source_repo_updated]
+
+jobs:
+  process-change:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log Payload
+        run: |
+          echo "Received update from source!"
+          echo "Commit SHA: ${{ github.event.client_payload.sha }}"
+          echo "Message: ${{ github.event.client_payload.message }}"
