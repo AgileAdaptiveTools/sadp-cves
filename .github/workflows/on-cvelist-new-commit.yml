@@ -17,6 +17,7 @@ jobs:
       - name: Install cve-cli
         run: |
           # npm install cve-cli-0.0.2-rc2.tgz
+          pwd
           tar -xzvf cve-cli-0.0.2-rc2.tgz
           cd package
           npm install
