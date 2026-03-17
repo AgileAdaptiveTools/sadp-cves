@@ -29,15 +29,15 @@ jobs:
           # npm install cve-cli-0.0.2-rc2.tgz
           pwd
           ls -al
-          cd package
-          pwd
-          ls -al
           tar -xzvf .github/workflows/cve-cli-0.0.2-rc2.tgz
           cd package
           npm install
           
       - name: Run cve-cli
         run: |
+          pwd
+          ls -al
+          cd package
           pwd
           ls -al
           NODE_CONFIG_ENV=devel ./bin/run.js date -v
