@@ -14,6 +14,12 @@ jobs:
   process-change:
     runs-on: ubuntu-latest
     steps:
+      - name: Log Payload
+        run: |
+          echo "Received update from source!"
+          echo "Commit SHA: ${{ github.event.client_payload.sha }}"
+          echo "Message: ${{ github.event.client_payload.message }}"
+          
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -28,23 +34,17 @@ jobs:
         run: |
           # npm install cve-cli-0.0.2-rc2.tgz
           pwd
-          ls -al
+          # ls -al
           tar -xzvf .github/workflows/cve-cli-0.0.2-rc2.tgz
           cd package
           npm install
           
       - name: Run cve-cli
         run: |
-          pwd
-          ls -al
+          # pwd
+          # ls -al
           cd package
           pwd
           ls -al
           NODE_CONFIG_ENV=devel ./bin/run.js date -v
-          NODE_CONFIG_ENV=devel ./bin/run.js delta deltalog get
-
-      - name: Log Payload
-        run: |
-          echo "Received update from source!"
-          echo "Commit SHA: ${{ github.event.client_payload.sha }}"
-          echo "Message: ${{ github.event.client_payload.message }}"
+          # NODE_CONFIG_ENV=devel ./bin/run.js delta deltalog get
