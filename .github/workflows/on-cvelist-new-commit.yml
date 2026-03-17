@@ -14,10 +14,21 @@ jobs:
   process-change:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+          
+      - name: Setup Node to specific version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          
       - name: Install cve-cli
         run: |
           # npm install cve-cli-0.0.2-rc2.tgz
           pwd
+          ls -al
           tar -xzvf cve-cli-0.0.2-rc2.tgz
           cd package
           npm install
