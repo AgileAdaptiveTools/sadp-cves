@@ -41,10 +41,12 @@ jobs:
           
       - name: Run cve-cli
         run: |
-          # pwd
-          # ls -al
-          cd package
           pwd
+          # ls -al
+          # cd package
+          # copy all code to root directory
+          cp -a ./package/. .
+          # pwd
           ls -al
           NODE_CONFIG_ENV=devel ./bin/run.js date -v
           # NODE_CONFIG_ENV=devel ./bin/run.js delta deltalog get
