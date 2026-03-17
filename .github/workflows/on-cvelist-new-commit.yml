@@ -3,6 +3,12 @@ name: Handle Source Notification
 on:
   repository_dispatch:
     types: [source_repo_updated]
+  workflow_dispatch:
+    inputs:
+      params:
+        description: 'command line arguments'
+        required: false
+        default: ''
 
 jobs:
   process-change:
