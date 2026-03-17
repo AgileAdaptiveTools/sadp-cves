@@ -48,3 +48,7 @@ jobs:
           ls -al
           NODE_CONFIG_ENV=devel ./bin/run.js date -v
           # NODE_CONFIG_ENV=devel ./bin/run.js delta deltalog get
+
+          NODE_CONFIG_ENV=devel ./bin/run.js cvelist update --source cvelist 
+          l -R downloads && l -R downloads | grep CVE- | wc -l
+          
