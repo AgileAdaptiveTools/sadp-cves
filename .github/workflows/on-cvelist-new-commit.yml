@@ -32,10 +32,9 @@ jobs:
           
       - name: Install cve-cli
         run: |
-          # npm install cve-cli-0.0.2-rc2.tgz
           pwd
           # ls -al
-          tar -xzvf .github/workflows/cve-cli-0.0.3-rc2.tgz
+          tar -xzvf .github/workflows/cve-cli-0.0.2-rc3.tgz
           cd package
           npm install
           
