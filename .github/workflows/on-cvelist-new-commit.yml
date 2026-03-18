@@ -53,6 +53,6 @@ jobs:
           NODE_CONFIG_ENV=sadp ./bin/run.js cvelist update --source cvelist 
           echo "downloads:"
           ls -alR downloads && ls -R downloads | grep CVE- | wc -l
-          echo "downloads2"
-          ls -alR downloads && ls -R downloads2 | grep CVE- | wc -l
+          echo "downloads2:"
+          ls -alR downloads2 && ls -R downloads2 | grep CVE- | wc -l
           
