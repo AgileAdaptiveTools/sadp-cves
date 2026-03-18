@@ -60,4 +60,5 @@ jobs:
           git config --global user.name "cvelistV5 Github Action"
           git add downloads2
           git commit -m 'updated SADP to downloads2'
+          git push
           
